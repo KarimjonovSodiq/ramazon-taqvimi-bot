@@ -101,7 +101,7 @@ def select_region(update, context):
 
 
 def select_dua(update, context):
-    saharlik = "<b>Saharlik (Og`iz yopish) duosi:</b>\nNavaytu an asuma sovma shahri Ramazona minal fajri ilal mag'ribi, xolisan lillahi ta'ala."
+    saharlik = "<b>Ro‘za tutish (saharlik, og‘iz yopish) duosi \n نَوَيْتُ أَنْ أَصُومَ صَوْمَ شَهْرَ رَمَضَانَ مِنَ الْفَجْرِ إِلَى الْمَغْرِبِ، خَالِصًا لِلهِ تَعَالَى أَللهُ أَكْبَرُ  \n Navaytu an asuvma sovma shahro ramazona minal fajri ilal mag‘ribi, xolisan lillahi ta`aalaa, Allohu akbar. \n Ma`nosi: Ramazon oyining ro‘zasini subhdan to kun botguncha tutmoqni niyat qildim. Xolis Alloh uchun Alloh buyukdir."
     iftorlik = "<b>Iftorlik (Og`iz ochish) duosi:</b>\nAllohumma laka sumtu va bika amantu va a'alayka tavakkaltu va 'ala rizqika aftartu, fag‘firli, ya G‘offaru, ma qoddamtu vama axxortu."
     update.message.reply_photo(photo=open('pic/2.jpg', 'rb'),
                                caption="{}\n \n{}".format(saharlik, iftorlik), parse_mode='HTML',
