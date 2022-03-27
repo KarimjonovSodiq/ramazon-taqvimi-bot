@@ -103,7 +103,7 @@ def select_region(update, context):
 def select_dua(update, context):
     duo = "<b>Ro‘za tutish (saharlik, og‘iz yopish) duosi va Iftorlik (Og`iz ochish) duosi:</b>"
     update.message.reply_photo(photo=open('pic/duo.jpg', 'rb'),
-                               caption="{}\n \n{}".format(duo), parse_mode='HTML',
+                               caption="{}".format(duo), parse_mode='HTML',
                                reply_markup=main_buttons)
 
 
