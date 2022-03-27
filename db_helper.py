@@ -15,5 +15,5 @@ class DBHelper:
         return self.cursor.execute('select id, name from regions where id=?', (region_id,)).fetchone()
 
     def get_calendar_by_region(self, region_id, dt):
-        return self.cursor.execute('select * from ramzon_taqvim where region_id = ? and r_date = ?',
+        return self.cursor.execute('select * from ramazon_taqvimi where region_id = ? and r_date = ?',
                                    (region_id, dt)).fetchone()

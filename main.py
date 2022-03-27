@@ -1,13 +1,9 @@
 from datetime import datetime, timedelta
-
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ReplyKeyboardMarkup
 from telegram.ext import (Updater, CommandHandler, CallbackQueryHandler, ConversationHandler, MessageHandler, Filters)
-
-from config import TOKEN, DB_NAME
+from config import *
 from db_helper import DBHelper
 
-BTN_TODAY, BTN_MONTH, BTN_REGION, BTN_DUA = (
-    '⌛️ Bugun', '📅 To`liq taqvim', '🌍Hudud', '🤲 Duo')
 main_buttons = ReplyKeyboardMarkup([
     [BTN_TODAY], [BTN_MONTH], [BTN_REGION], [BTN_DUA]
 ], resize_keyboard=True)
@@ -36,9 +32,9 @@ def start(update, context):
     user_region[user.id] = None
     buttons = region_buttons()
 
-    update.message.reply_html(
-        'Assalomu aleykum <b>{}!</b>\n \n<b>Ramazon oyi muborak bo`lsin!</b>\n \nHududingizni tanlang?'.
-            format(user.first_name), reply_markup=InlineKeyboardMarkup(buttons))
+    update.message.reply_html('Assalomu aleykum <b>{}!</b>\n \n<b>Ramazon oyi muborak bo`lsin!</b>\n \nHududingizni tanlang?'.format(user.first_name) )
+    update.message.reply_html('Hududingizni tanlang' , reply_markup=InlineKeyboardMarkup(buttons))
+
 
     return STATE_REGION
 
@@ -69,7 +65,8 @@ def calendar_today(update, context):
         calendar = db.get_calendar_by_region(region_id, today)
         photo_path = 'pic/{}.jpg'.format(calendar['id'])
         message = '<b>Ramazon/b> 2022\n<b>{}</b>vaqti\n \nSaharlik: <b>{}</b>\nIftorlik: <b>{}</b>'.format(
-            region['name'], calendar['saharlik'][:5], calendar['Iftorlik'][:5])
+            region['name'], calendar['saharlik'][:5], calendar['iftorlik'][:5])
+        print(calendar['saharlik'])
 
         update.message.reply_photo(photo=open(photo_path, 'rb'), caption=message, parse_mode='HTML',
                                    reply_markup=main_buttons)
@@ -106,7 +103,7 @@ def select_region(update, context):
 def select_dua(update, context):
     saharlik = "<b>Saharlik (Og`iz yopish) duosi:</b>\nNavaytu an asuma sovma shahri Ramazona minal fajri ilal mag'ribi, xolisan lillahi ta'ala."
     iftorlik = "<b>Iftorlik (Og`iz ochish) duosi:</b>\nАллоҳумма лака сумту ва бика аманту ва аъалайка таваккалту ва ъала ризқика афтарту, фағфирли, йа Ғоффару, ма қоддамту вама аххорту."
-    update.message.reply_photo(photo=open('images/1.png', 'rb'),
+    update.message.reply_photo(photo=open('pic/1.jpg', 'rb'),
                                caption="{}\n \n{}".format(saharlik, iftorlik), parse_mode='HTML',
                                reply_markup=main_buttons)
 
