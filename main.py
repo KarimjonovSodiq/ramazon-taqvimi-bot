@@ -7,7 +7,8 @@ from db_helper import DBHelper
 main_buttons = ReplyKeyboardMarkup([
     [BTN_TODAY , BTN_MONTH], [BTN_REGION , BTN_DUA]
 ], resize_keyboard=True)
-
+buttons = ReplyKeyboardMarkup([
+]
 STATE_REGION = 1
 STATE_CALENDAR = 2
 
@@ -33,7 +34,7 @@ def start(update, context):
     buttons = region_buttons()
 
     update.message.reply_html('Assalomu aleykum <b>{}!</b>\n \n<b>Ramazon oyi muborak bo`lsin!</b>\n \nHududingizni tanlang?'.format(user.first_name) )
-    update.message.reply_html('Hududingizni tanlang' , reply_markup=InlineKeyboardMarkup(buttons))
+    update.message.reply_html('Hududingizni tanlang' , reply_markup=ReplyKeyboardMarkup(buttons))
 
 
     return STATE_REGION
