@@ -16,7 +16,7 @@ db = DBHelper(DB_NAME)
 
 def region_buttons():
     regions = db.get_regions()
-    buttons = []
+    buttons = [ReplyKeyboardMarkup]
     tmp_b = []
     for region in regions:
         tmp_b.append(region['name'], callback_data=region['id'])
