@@ -20,7 +20,7 @@ def region_buttons():
     buttons = []
     tmp_b = []
     for region in regions:
-        tmp_b.append(InlineKeyboardButton(region['name'], callback_data=region['id']))
+        tmp_b.append(ReplyKeyboardMarkup(region['name'], callback_data=region['id']))
         if len(tmp_b) == 2:
             buttons.append(tmp_b)
             tmp_b = []
