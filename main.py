@@ -63,7 +63,7 @@ def calendar_today(update, context):
         today = str(datetime.now().date())
 
         calendar = db.get_calendar_by_region(region_id, today)
-        photo_path = 'pic/{}.jpg'.format(calendar['id'])
+        photo_path = 'pic/2.jpg'.format(calendar['id'])
         message = '<b>Ramazon/b> 2022\n<b>{}</b>vaqti\n \nSaharlik: <b>{}</b>\nIftorlik: <b>{}</b>'.format(
             region['name'], calendar['saharlik'][:5], calendar['iftorlik'][:5])
         print(calendar['saharlik'])
@@ -84,7 +84,7 @@ def calendar_month(update, context):
         region_id = user_region[user_id]
         region = db.get_region(region_id)
 
-        photo_path = 'pic/full/region_{}.jpg'.format(region['id'])
+        photo_path = 'pic/2.jpg'.format(region['id'])
         message = '<b>Ramazon</b> 2022\n<b>{}</b> taqvimi'.format(region['name'])
 
         update.message.reply_photo(photo=open(photo_path, 'rb'), caption=message, parse_mode='HTML',
@@ -103,7 +103,7 @@ def select_region(update, context):
 def select_dua(update, context):
     saharlik = "<b>Saharlik (Og`iz yopish) duosi:</b>\nNavaytu an asuma sovma shahri Ramazona minal fajri ilal mag'ribi, xolisan lillahi ta'ala."
     iftorlik = "<b>Iftorlik (Og`iz ochish) duosi:</b>\nАллоҳумма лака сумту ва бика аманту ва аъалайка таваккалту ва ъала ризқика афтарту, фағфирли, йа Ғоффару, ма қоддамту вама аххорту."
-    update.message.reply_photo(photo=open('pic/1.jpg', 'rb'),
+    update.message.reply_photo(photo=open('pic/2.jpg', 'rb'),
                                caption="{}\n \n{}".format(saharlik, iftorlik), parse_mode='HTML',
                                reply_markup=main_buttons)
 
