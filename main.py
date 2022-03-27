@@ -16,10 +16,10 @@ db = DBHelper(DB_NAME)
 
 def region_buttons():
     regions = db.get_regions()
-    buttons = [ReplyKeyboardMarkup]
+    buttons = []
     tmp_b = []
     for region in regions:
-        tmp_b.append(region['name'], callback_data=region['id'])
+        tmp_b.append(InlineKeyboardButton(region['name'], callback_data=region['id']))
         if len(tmp_b) == 2:
             buttons.append(tmp_b)
             tmp_b = []
@@ -32,7 +32,7 @@ def start(update, context):
     buttons = region_buttons()
 
     update.message.reply_html('Assalomu aleykum <b>{}!</b>\n \n<b>Ramazon oyi muborak bo`lsin!</b>\n \nHududingizni tanlang?'.format(user.first_name) )
-    update.message.reply_html('Hududingizni tanlang' , reply_markup=buttons)
+    update.message.reply_html('Hududingizni tanlang' , reply_markup=InlineKeyboardMarkup(buttons))
 
 
     return STATE_REGION
