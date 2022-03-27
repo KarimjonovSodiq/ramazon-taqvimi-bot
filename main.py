@@ -102,7 +102,7 @@ def select_region(update, context):
 
 def select_dua(update, context):
     saharlik = "<b>Saharlik (Og`iz yopish) duosi:</b>\nNavaytu an asuma sovma shahri Ramazona minal fajri ilal mag'ribi, xolisan lillahi ta'ala."
-    iftorlik = "<b>Iftorlik (Og`iz ochish) duosi:</b>\nАллоҳумма лака сумту ва бика аманту ва аъалайка таваккалту ва ъала ризқика афтарту, фағфирли, йа Ғоффару, ма қоддамту вама аххорту."
+    iftorlik = "<b>Iftorlik (Og`iz ochish) duosi:</b>\nAllohumma laka sumtu va bika amantu va a'alayka tavakkaltu va 'ala rizqika aftartu, fag‘firli, ya G‘offaru, ma qoddamtu vama axxortu."
     update.message.reply_photo(photo=open('pic/2.jpg', 'rb'),
                                caption="{}\n \n{}".format(saharlik, iftorlik), parse_mode='HTML',
                                reply_markup=main_buttons)
