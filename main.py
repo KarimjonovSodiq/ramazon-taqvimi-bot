@@ -5,7 +5,7 @@ from config import *
 from db_helper import DBHelper
 
 main_buttons = ReplyKeyboardMarkup([
-    [BTN_TODAY], [BTN_MONTH], [BTN_REGION], [BTN_DUA]
+    [BTN_TODAY , BTN_MONTH], [BTN_REGION , BTN_DUA]
 ], resize_keyboard=True)
 
 STATE_REGION = 1
