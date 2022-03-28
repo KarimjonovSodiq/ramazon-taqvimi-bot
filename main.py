@@ -63,7 +63,7 @@ def calendar_today(update, context):
 
         calendar = db.get_calendar_by_region(region_id, today)
         photo_path = 'pic/2.jpg'.format(calendar['id'])
-        message = '<b>Ramazon/b> 2022\n<b>{}</b>vaqti\n \nSaharlik: <b>{}</b>\nIftorlik: <b>{}</b>'.format(
+        message = '<b>Ramazon</b> 2022\n<b>{}</b>vaqti\n \nSaharlik: <b>{}</b>\nIftorlik: <b>{}</b>'.format(
             region['name'], calendar['saharlik'][:5], calendar['iftorlik'][:5])
         print(calendar['saharlik'])
 
