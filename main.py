@@ -83,7 +83,7 @@ def calendar_month(update, context):
         region_id = user_region[user_id]
         region = db.get_region(region_id)
 
-        photo_path = 'pic/2.jpg'.format(region['id'])
+        photo_path = 'pic/{}.png'.format(region['id'])
         message = '<b>Ramazon</b> 2022\n<b>{}</b> taqvimi'.format(region['name'])
 
         update.message.reply_photo(photo=open(photo_path, 'rb'), caption=message, parse_mode='HTML',
