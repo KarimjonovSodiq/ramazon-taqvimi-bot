@@ -32,7 +32,7 @@ def start(update, context):
     buttons = region_buttons()
 
     update.message.reply_html('Assalomu aleykum <b>{}!</b>\n \n<b>Ramazon oyi muborak bo`lsin!</b>\n \nHududingizni tanlang?'.format(user.first_name),reply_markup=InlineKeyboardMarkup(buttons))
-    update.message.reply_html('<b>Viloyat vaqti bilan undagi tumanlar vaqti farqlanishi mumkin</b>❗️❗️❗️ )
+    update.message.reply_html('Viloyat vaqti bilan undagi tumanlar vaqti farqlanishi mumkin❗️❗️❗️ )
 
 
     return STATE_REGION
