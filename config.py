@@ -1,4 +1,4 @@
-TOKEN = '5292242994:AAEu9_JW_5Uog1Eh3TOE80xKECvQX5nPyX0'
+TOKEN = '5168841978:AAGPbns3NLLb1Staj2C9FiM_N8QaNx826Q4'
 DB_NAME = 'ramazon.sqlite'
 BTN_TODAY = '⌛️ Bugun'
 BTN_MONTH = '📅 To`liq taqvim'
