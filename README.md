@@ -1,1 +1,2 @@
-# ramazon-taqvimi-bot
+# Ramazon taqvimi
+>2022-yil uchun ramazon taqvimi bot🤖
